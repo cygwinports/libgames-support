@@ -1,0 +1,29 @@
+inherit gnome2
+
+NAME="libgames-support"
+VERSION=0.1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="GNOME games library"
+DESCRIPTION="libgames-support is a small library intended for internal use by
+GNOME Games, but it may be used by others."
+
+PKG_NAMES="libgames-support0 libgames-support-common libgames-support-devel vala-libgames-support1.0"
+libgames_support0_REQUIRES="${NAME}-common"
+libgames_support0_CONTENTS="
+	usr/bin/cyggames-support-0.dll
+"
+libgames_support_common_CONTENTS="
+	usr/share/doc/${NAME}/
+	usr/share/locale/*/LC_MESSAGES/libgames-support.mo
+"
+libgames_support_devel_REQUIRES="vala-libgames-support1.0"
+libgames_support_devel_CONTENTS="
+	usr/include/gnome-games/libgames-support.h
+	usr/lib/libgames-support.dll.a
+	usr/lib/pkgconfig/libgames-support-1.0.pc
+"
+vala_libgames_support1_0_CONTENTS="
+	usr/share/vala/vapi/libgames-support-1.0.*
+"
+
